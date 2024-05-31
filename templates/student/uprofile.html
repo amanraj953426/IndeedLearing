@@ -1,0 +1,84 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block studentzone %}
+{% if not request.session.user %}
+
+<script>
+    alert('Login first');
+    location.href='/user/login'
+</script>
+{% endif %}
+<style>
+    #frm{
+    display:none;
+    }
+</style>
+<script>
+        function demo(){
+    document.getElementById("frm").style.display="block"
+    }
+  </script>
+<div class="text-center fs-2 mt-2">
+    Update <b class="txt-mycolor1">Profile</b>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+        {% for i in udata %}
+        <!-- Start Card -->
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">
+      <img src="/{{i.profile}}" style="height:180px" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+
+        <p class="card-text" style="line-height:24px; font-size:">
+            <i class="fa-solid fa-user"></i> {{i.name}}<br/>
+            <i class="fa-solid fa-phone"></i> {{i.mobile}}<br/>
+            <i class="fa-solid fa-city"></i> {{i.college}}<br/>
+            <i class="fa-solid fa-lock"></i> {{i.passwd}}<br/>
+            <i class="fa-solid fa-lock"></i> {{i.course}}<br/>
+            <a href="#" class="btn btn-dark text-light" onclick="demo()">
+                Edit Profile <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- End Card -->
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row" style="background:#F5F5F5" id="frm">
+    <div class="col-sm-6 mx-auto m-3">
+        <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    Name
+                    <input type="text" name="name" required placeholder="Enter your name" class="form-control"/>
+
+                    Password
+                    <input type="password" class="form-control" required name="passwd" placeholder="Enter your Password"/>
+
+                    Mobile
+                    <input type="number" name="mobile" required placeholder="Enter your number" class="form-control"/>
+
+                    College
+                    <input type="text" name="college" required placeholder="Enter your college" class="form-control"/>
+
+                    Course
+                    <input type="text" name="course" required placeholder="Enter your Course" class="form-control"/>
+
+
+
+                    Profile Picture
+                    <input type="file" name="fu" class="form-control"/>
+                    <input type="submit" value="Save" class="btn bg-mycolor1 m-2"/>
+                </form>
+    </div>
+</div>
+{% endblock %}

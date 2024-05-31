@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control{
+    height:45px;
+    margin-bottom:15px;
+    }
+</style>
+<div class="text-center txt-mycolor1 fs-2">Sign <b class="txt-mycolor1">Up</b></div>
+
+<div class="row">
+    <div class="col-sm-12 col-lg-4 py-4 mx-auto mb-3" style="background:#deedec;">
+        <div class="row">
+            <div class="col-sm-6 col-lg-12">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    Name
+                    <input type="text" name="name" required placeholder="Enter your name" class="form-control"/>
+
+                    Email
+                    <input type="email" name="email" required placeholder="Enter your email" class="form-control"/>
+                    Password
+                    <input type="password" class="form-control" required name="passwd" placeholder="Enter your Password"/>
+
+                    Mobile
+                    <input type="number" name="mobile" required placeholder="Enter your number" class="form-control"/>
+
+                    College
+                    <input type="text" name="college" required placeholder="Enter your college" class="form-control"/>
+
+                    Course
+                    <input type="text" name="course" required placeholder="Enter your Course" class="form-control"/>
+
+                    <select name="pyear" class="form-control">
+                        <option>--Select Pursuing Year--</option>
+                        <option>I Year</option>
+                        <option>II year</option>
+                        <option>III year</option>
+                        <option>IV year</option>
+                    </select>
+                    <select name="batch" class="form-control">
+                        <option>--Select Your Batch--</option>
+                        {% for i in bdata %}
+                        <option value="{{i.id}}">{{i.batch_name}}</option>
+                        {% endfor %}
+                    </select>
+
+                    Profile Picture
+                    <input type="file" name="fu" class="form-control"/>
+                    <input type="submit" value="Save" class="btn bg-mycolor1 form-control"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

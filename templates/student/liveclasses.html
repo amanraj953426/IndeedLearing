@@ -1,0 +1,23 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block studentzone %}
+{% if not request.session.user %}
+<script>
+    alert('Login first');
+    location.href='/user/liveclasses'
+</script>
+{% endif %}
+<div class="text-center fs-2 mt-2">
+    Live <b class="txt-mycolor1">classes</b>
+</div>
+
+<div class="row">
+    {% for i in data %}
+    <div class="col-sm-4 mx-auto p-5" style="background:#e7efee;line-height:35px;">
+        <b>Your Batch :</b> {{i.batch}}<br/>
+        <b>Time :</b>{{i.timing}}<br/>
+        <a href="{{i.clink}}" target="_blank" class="btn btn-sm btn-danger rounded-pill"><i class="fa-solid fa-video"></i> Link to Join</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

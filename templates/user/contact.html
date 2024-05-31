@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+<html>
+{% load static %}
+{% block childpage %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}"/>
+    <link rel="stylesheet" href="{% static 'css/all.css'%}"/>
+    <style>
+        :root{
+            --bgcolor: linear-gradient(50deg,#C2185B,#7B1FA2);
+            --txtcolor:#C2185B;
+        }
+        .bg-mycolor{
+            background:var(--bgcolor) !important;
+        }
+        .txt-mycolor{
+            color: var(--txtcolor);
+        }
+
+        input{
+        padding:10px;
+        margin-bottom:20px;
+        }
+        .c2{
+        height:
+        }
+        u{
+        color: linear gradient(50deg,#C2185B,#000000);
+        }
+
+    </style>
+</head>
+<body>
+<div class="text-center fs-2">
+    <b class="txt-mycolor">Cont<u>act</b> wit</u>h Us<br/>
+</div>
+    <p class="text-center">You may contact us by contact number or fill this form any time you need profesional support or have any questions</p>
+<hr/>
+<div class="container-fluid">
+    <div class="row" style="height:400px; width:1000px; margin:auto;">
+        <div class="col-sm-10 m-4">
+        <form method="post">
+            {% csrf_token %}
+            <h3>Send Your Message</h3>
+            <table>
+                <tr>
+                <td>
+                    Your name:<br/>
+                    <input style="width:245px" type="text" name="name" placeholder="Enter your name" required/>
+                </td>
+                    <td>
+                     Your Contact:<br/>
+                    <input style="width:245px" type="number" name="mobile" placeholder="Enter your number" required/>
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Your Email:<br/>
+                        <input style="width:500px;" type="email" name="email" placeholder="Enter your email" required>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Your Message:<br/>
+                        <textarea class="form-control" name="msg" placeholder="Enter your Message"></textarea>
+
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" class="bg-mycolor mt-3 p-1 text-light "/><br/>
+        </form>
+
+            </div>
+        <div class="row">
+        <div class="col-sm-12">
+
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+</body>
+</html>

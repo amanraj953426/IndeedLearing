@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<Style>
+    .form-control{
+    height:50px;
+    background:#f2f2f2;
+    }
+</Style>
+<div class="text-center fs-2">Log <b class="txt-mycolor1">In</b></div>
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+        <form method="post">
+            {% csrf_token %}
+            USERNAME<input type="email" name="email" required placeholder="Username.." class="form-control"/>
+            PASSWORD<input type="password" name="passwd" required placeholder="Password.." class="form-control"/>
+            <input type="submit" value="LOGIN" class="btn bg-mycolor1 mt-3"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+
+<div class="text-center fs-2">New<b class="txt-mycolor1"> Batches</b></div>
+<!-- start latext course -->
+<div class="row py-4" style="background:#deedec;">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+        {% for a in bdata %}
+
+            <div class="col-lg-3 col-md-6 col-sm-12 py-3">
+            <div class="card">
+            <img src="/{{a.batch_pic}}" class="card-img-top"/>
+            <div class="card-body">
+                <p class="card-text text-center">
+                    <big><b>{{a.name}}</b></big><br/>
+                </p>
+                <p class="card-text">
+                    <small class="bandage">{{a.starting_date}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+            {% endfor %}
+</div>
+<!-- end latext news -->
+
+    </div>
+{% endblock %}
+</div>

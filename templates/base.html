@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    <title>Title</title>
+    <style>
+        :root{
+        --bgcolor1:linear-gradient(50deg,#E91E63,#9C27B0);
+        --bgcolor2:linear-gradient(50deg,#FBFBFB,#F5F5F5);
+        --txtcolor1:#E91E63;
+        --txtcolor2:#42A5F5;
+
+
+        }
+        .t1{
+        font-size:14px
+        }
+        .bg-mycolor1{
+        background:var(--bgcolor1) !important;
+        }
+        .t1{
+        font-size:14px
+        }
+        .bg-mycolor2{
+        background:var(--bgcolor2) !important;
+        }
+        .txt-mycolor1{
+        color:var(--txtcolor1);
+        }
+        .txt-mycolor2{
+        color:var(--txtcolor1);
+        }
+        .fa-brands{
+        border:1px solid white;
+        padding:.5%;
+        transition:all 1s;
+        }
+        .fa-brands:hover{
+        transform:rotate(360deg);
+        transition:all 1s;
+        background:white;
+        color:#E91E63;
+        }
+        #menu{
+        background:transparent !important;
+        padding-left:15%;
+        }
+
+        #menu ul li a{
+        color:white;
+        }
+        .footer1{
+        min-height:300px;
+        }
+        .footer2{
+        min-height:50px;
+        margin-top:.1%;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row t1 text-center bg-mycolor2 py-1">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-phone fa-spin"></i> +91 9534261545
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-envelope"></i> amanraj953426@gmail.com
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            Welcome to Indeed Learning
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-square-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-whatsapp"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </div>
+    <div class="row t2">
+        <div class="col-sm-10 mx-auto">
+            <div class="row py-3">
+                <div class="col-sm-4 fs-2">
+                    Indeed<b class="txt-mycolor2">Learning
+                    <i class="fa-solid fa-graduation-cap"></i></b>
+                </div>
+                <div class="col-sm-5"></div>
+                <div class="col-sm-3 text-end">
+                    <a href="/user/contact/" class="btn btn-sm bg-dark text-light rounded-pill">Enquiry <i class="fa-solid fa-person-circle-question"></i></a>
+                    <a href="/user/feedback/" class="btn btn-sm bg-dark text-light rounded-pill">Feedback <i class="fa-solid fa-comments"></i></a>
+                    <a href="/user/login/" class="btn btn-sm bg-dark text-light rounded-pill">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row t3 bg-mycolor1">
+        <div class="col-sm-8 mx-auto">
+            <!-- start menu -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/index"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/batches/"><i class="fa-solid fa-users"></i> New Batches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/signin/"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/facility/"><i class="fa-solid fa-city"></i> Our Facility</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/stories/"><i class="fa-solid fa-handshake-simple"></i> Success Stories</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+            <!-- End menu -->
+        </div>
+        </div>
+<div class="row">
+    <div class="col-sm-12" style="min-height:400px;">
+{% block childpage %}
+{% endblock %}
+        </div>
+    </div>
+<div class="row footer1 bg-dark">
+    <div class="col-lg-6 mx-auto">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 text-light p-5 text-right">
+        <b><i class="fa-solid fa-house"></i> Contact Address</b><br/>
+        <p>plot no-43, Behind H.P Paterol pump,<br/> Vikash Nagar Lucknow,<br/>Utter pradesh, 226022 <br/><br/>
+           <i class="fa-solid fa-phone"></i> 9534261545<br/><i class="fa-solid fa-phone"></i> 9608825901<br/><i class="fa-solid fa-envelope"></i> amanraj953426@gmail.com
+        </p>
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-4 text-light p-5">
+        <p>Indeed <b class="txt-mycolor1">Learning</b></p>
+        <p>Indeed Learning is an Organization working in both Software Development and Software Training which aims to make all its clients feel special and help them to become successfull.</p>
+        <b>Stay Connected</b><br/>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-whatsapp"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+        </div>
+    </div>
+
+</div>
+<div class="row footer2 bg-dark">
+    <p class="text-light">&copy; 2023 |<b class="txt-mycolor1"> Indeed Learning </b> 2023 | Developed By <b class="txt-mycolor"> Technical Team</b></p>
+</div>
+    </div>
+<script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+</body>
+</html>

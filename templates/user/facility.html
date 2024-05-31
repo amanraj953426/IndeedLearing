@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .dash{
+    min-height:180px;
+    background:white;
+    font-size:30px;
+    text-align:center;
+    padding-top:30px;
+    border-radius:5px;
+    box-shadow:0px 0px 30px #979797;
+    }
+    a{
+
+    text-decoration:none;
+    }
+</style>
+<div class="text-center fs-2">our <b class="txt-mycolor1">Facility</b></div>
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-3 col-sm-12 col-sm-12 my-2">
+                    <p class="dash">
+                        <i class="fa-solid fa-video"></i><br/>
+                        Lectures
+                    </p>
+                </div>
+                 <div class="col-lg-3 col-sm-12 col-sm-12 my-2">
+                    <p class="dash">
+                        <i class="fa-solid fa-file"></i><br/>
+                        E Notes
+                    </p>
+                </div>
+                 <div class="col-lg-3 col-sm-12 col-sm-12 my-2">
+                    <p class="dash">
+                        <i class="fa-regular fa-file-lines"></i><br/>
+                        Task
+                    </p>
+                </div>
+                 <div class="col-lg-3 col-sm-12 col-sm-12 my-2">
+                    <p class="dash">
+                        <i class="fa-solid fa-video"></i><br/>
+                        Live Class | Timing
+                    </p>
+                </div>
+                 <div class="col-lg-3 col-sm-12 col-sm-12 my-2">
+                    <p class="dash">
+                        <i class="fa-solid fa-download"></i><br/>
+                        Software Kit
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

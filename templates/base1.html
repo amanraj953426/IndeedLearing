@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    <style>
+         :root{
+        --bgcolor1:linear-gradient(50deg,#E91E63,#9C27B0);
+        --bgcolor2:linear-gradient(50deg,#FBFBFB,#F5F5F5);
+        --txtcolor1:#E91E63;
+        --txtcolor2:#42A5F5;
+
+
+        }
+        .t1{
+        font-size:14px
+        }
+        .bg-mycolor1{
+        background:var(--bgcolor1) !important;
+        }
+        .t1{
+        font-size:14px
+        }
+        .bg-mycolor2{
+        background:var(--bgcolor2) !important;
+        }
+        .txt-mycolor1{
+        color:var(--txtcolor1);
+        }
+        .txt-mycolor2{
+        color:var(--txtcolor1);
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row menu bg-dark">
+        <div class="col-sm-12">
+            <!-- start Menu -->
+            <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Indeed <b class="txt-mycolor1">learning <i class="fa-solid fa-laptop-file"></i></b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+            {% if request.session.user %}
+            <img src="/{{request.session.userpic}}" class="img-thumbnail" style="max-height:50px;" />
+            {{request.session.username}}
+
+            <p style="font-size:13px;">
+                {{ request.session.user }}
+                </p>
+            {% endif %}
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/student/index/">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/student/lectures"><i class="fa-solid fa-video"></i> Lectures</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/student/notes/">
+                <i class="fa-solid fa-file"></i> E Notes</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/tasks/">
+                <i class="fa-regular fa-file-lines"></i> Task</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/student/batches/"><i class="fa-solid fa-video"></i> Upcoming Batches</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/student/liveclasses/"><i class="fa-solid fa-tv"></i> Live Classes | Timing</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/student/uprofile/"><i class="fa-solid fa-user"></i> Update Profile</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/student/softwarekit/"><i class="fa-solid fa-download"></i> Software Kit</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="/student/logout/"><i class="fa-solid fa-power-off"></i> Logout</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+        <!-- End Menu -->
+        </div>
+
+    </div>
+    <div class="row t1 bg-mycolor2">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 txt-mycolor2 text-center">Your welcome in Stuedent Zone</div>
+        <div class="col-sm-4"></div>
+    </div>
+
+<div class="row">
+    <div class="col-sm-12" style="min-height:500px background:f6f6f6">
+        {% block studentzone %}
+{% endblock %}
+    </div>
+</div>
+
+
+<div class=" row footer bg-dark text-light py-2 fd-5 text-center">
+    <div class="col-sm-6">
+        &copy; Techpile Technology Pvt.Ltd.
+    </div>
+    <div class="col-sm-6">
+        Developed By : Aman Kumar
+    </div>
+</div>
+</div>
+<script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+</body>
+</html>
